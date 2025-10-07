@@ -440,35 +440,20 @@ footer img {
 .hero {
   width: 100%;
   min-height: 100vh;
+  height: 100vh;
 }
-@media (min-width: 768px) {
+@media (min-width: 1441px) {
   .hero {
-    height: 100vh;
     padding-top: 5rem;
+    height: auto;
+    min-height: auto;
   }
 }
 .hero {
-  background: -webkit-gradient(
-    linear,
-    left top, left bottom,
-    color-stop(14.25%, #e2f6fc),
-    to(rgba(255, 255, 255, 0))
-  );
-  background: -webkit-linear-gradient(
-    top,
-    #e2f6fc 14.25%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background: -moz-linear-gradient(
-    top,
-    #e2f6fc 14.25%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    #e2f6fc 14.25%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(14.25%, #e2f6fc), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(top, #e2f6fc 14.25%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(top, #e2f6fc 14.25%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, #e2f6fc 14.25%, rgba(255, 255, 255, 0) 100%);
 }
 .hero__container {
   display: -webkit-flex;
@@ -617,19 +602,13 @@ footer img {
   position: absolute;
   bottom: 0px;
 }
-.hero__card1,
-.hero__card2,
-.hero__orangedot,
-.hero__icon1 {
+.hero__card1, .hero__card2, .hero__orangedot, .hero__icon1 {
   aspect-ratio: 1;
   display: none;
   position: absolute;
 }
 @media (min-width: 1024px) {
-  .hero__card1,
-  .hero__card2,
-  .hero__orangedot,
-  .hero__icon1 {
+  .hero__card1, .hero__card2, .hero__orangedot, .hero__icon1 {
     display: block;
   }
 }
@@ -884,21 +863,9 @@ footer img {
 }
 .faq__blur {
   border-radius: 1000px;
-  background: -webkit-linear-gradient(
-    138deg,
-    #42a7c3 -0.61%,
-    rgba(255, 255, 255, 0) 102.42%
-  );
-  background: -moz-linear-gradient(
-    138deg,
-    #42a7c3 -0.61%,
-    rgba(255, 255, 255, 0) 102.42%
-  );
-  background: linear-gradient(
-    312deg,
-    #42a7c3 -0.61%,
-    rgba(255, 255, 255, 0) 102.42%
-  );
+  background: -webkit-linear-gradient(138deg, #42a7c3 -0.61%, rgba(255, 255, 255, 0) 102.42%);
+  background: -moz-linear-gradient(138deg, #42a7c3 -0.61%, rgba(255, 255, 255, 0) 102.42%);
+  background: linear-gradient(312deg, #42a7c3 -0.61%, rgba(255, 255, 255, 0) 102.42%);
   -webkit-filter: blur(500px);
           filter: blur(500px);
   width: 1000px;
@@ -963,8 +930,7 @@ footer img {
 .faq__img {
   width: 100%;
 }
-.faq__info,
-.faq__header {
+.faq__info, .faq__header {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1041,10 +1007,8 @@ footer img {
 }
 .faq__item:hover {
   background: var(--color-white);
-  -webkit-box-shadow: 0 2px 8px 0 rgba(40, 41, 61, 0.02),
-    0 16px 24px 0 rgba(96, 97, 112, 0.12);
-          box-shadow: 0 2px 8px 0 rgba(40, 41, 61, 0.02),
-    0 16px 24px 0 rgba(96, 97, 112, 0.12);
+  -webkit-box-shadow: 0 2px 8px 0 rgba(40, 41, 61, 0.02), 0 16px 24px 0 rgba(96, 97, 112, 0.12);
+          box-shadow: 0 2px 8px 0 rgba(40, 41, 61, 0.02), 0 16px 24px 0 rgba(96, 97, 112, 0.12);
 }
 .faq__item-img {
   border-radius: var(--space-1);
@@ -1203,5 +1167,4 @@ footer img {
   letter-spacing: 0.15px;
   color: #636363;
 }
-
 /*# sourceMappingURL=style.css.map */

@@ -3,10 +3,12 @@
 .hero {
   width: 100%;
   min-height: 100vh;
+  height: 100vh;
 
-  @include respond(md) {
-    height: 100vh;
+  @include respond(xxl) {
     padding-top: 5rem;
+    height: auto;
+    min-height: auto;
   }
   background: linear-gradient(
     180deg,
