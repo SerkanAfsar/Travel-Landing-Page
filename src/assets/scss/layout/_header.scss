@@ -1,0 +1,133 @@
+@use "../base/mixins" as *;
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: inherit;
+  z-index: 10;
+  &.scrolled {
+    background: var(--color-white);
+    box-shadow: 0px 2px 8px 0px #ddd;
+    animation: animateFromTop 0.3s ease-in-out;
+  }
+  &__container {
+    @include flex-box(space-between, center, row);
+    width: 100%;
+  }
+  &__title {
+    font-family: var(--font-Roboto);
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  nav {
+    display: none;
+    font-family: var(--font-Lato);
+    color: var(--color-text);
+    gap: var(--space-2);
+    transition: all 0.2s ease-in-out;
+    a {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        display: block;
+        width: 0px;
+        height: 1.5px;
+        background: var(--color-text);
+        transition: all 0.3s ease-in-out;
+      }
+      &.active {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+
+    &.active {
+      @include flex-box(center, center, column);
+      right: 0px;
+      position: fixed;
+      inset: 0rem;
+      background: #000;
+      padding: var(--space-2);
+      color: var(--color-white);
+      animation: animateFromRight 0.2s ease-in-out;
+    }
+    & > .btn-primary {
+      width: 100%;
+      display: flex;
+      @include respond(md) {
+        display: none;
+      }
+    }
+
+    @include respond(md) {
+      @include flex-box;
+    }
+  }
+  .btn-primary {
+    display: none;
+    @include respond(md) {
+      display: flex;
+    }
+  }
+
+  &__toggle {
+    width: 30px;
+    display: block;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 1px;
+      background: var(--color-text);
+      margin: 6px 0px;
+      display: block;
+    }
+    @include respond(md) {
+      display: none;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+  }
+}
+
+@keyframes animateFromRight {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes animateFromTop {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    top: -100%;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    top: 0px;
+  }
+}

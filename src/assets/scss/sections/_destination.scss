@@ -1,0 +1,57 @@
+@use "../base/mixins" as *;
+
+.destination {
+  &__container {
+    @include flex-box(center, stretch, row);
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    @include respond(lg) {
+      flex-wrap: nowrap;
+      gap: var(--space-1);
+      justify-content: space-between;
+    }
+  }
+  &__item {
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    @include flex-box(flex-start, flex-start, column);
+
+    position: relative;
+    background: var(--color-lightgray);
+    font-family: var(--font-Lato);
+
+    @include respond(md) {
+      max-width: 320px;
+    }
+
+    & > img {
+      width: calc(100% + 2rem);
+      max-width: calc(100% + 2rem);
+      margin-left: -1rem;
+      margin-top: -0.5rem;
+    }
+    header {
+      width: 100%;
+      @include flex-box(flex-start, flex-start, column);
+      gap: 0.2rem;
+
+      h4,
+      span {
+        font-size: 0.75rem;
+        color: var(--color-textgray);
+      }
+      h5 {
+        font-size: 1rem;
+      }
+      span {
+        margin-bottom: var(--space-1);
+      }
+    }
+  }
+  &__price {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    margin-top: auto;
+  }
+}

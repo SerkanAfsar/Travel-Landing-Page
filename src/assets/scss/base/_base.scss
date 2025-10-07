@@ -1,0 +1,65 @@
+@use "mixins" as *;
+:root {
+  --color-primary: #42a7c3;
+  --color-secondary: #fa8443;
+  --color-text: #333;
+  --color-white: #fff;
+  --color-lightgray: rgba(240, 240, 240, 0.45);
+  --color-textgray: #8f8f8f;
+
+  --space-0-5: 0.5rem;
+  --space-1: 1rem;
+  --space-1-5: 1.5rem;
+  --space-2: 2rem;
+  --space-2-5: 2.5rem;
+
+  --font-Lato: "Lato", sans-serif;
+  --font-Poppins: "Poppins", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;
+
+  ---font-size-base: 15px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+textarea,
+input,
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  max-width: 90%;
+  margin: 0px auto;
+  @include respond(xl) {
+    max-width: 1200px;
+  }
+}
+section {
+  padding: 2rem 0rem;
+  @include respond(xl) {
+    padding: 5rem 0;
+  }
+}

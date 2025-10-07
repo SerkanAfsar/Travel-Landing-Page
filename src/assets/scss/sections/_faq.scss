@@ -1,0 +1,86 @@
+@use "../base/mixins" as *;
+.faq {
+  @include flex-box;
+  &__blur {
+    border-radius: 1000px;
+    background: linear-gradient(
+      312deg,
+      #42a7c3 -0.61%,
+      rgba(255, 255, 255, 0) 102.42%
+    );
+    filter: blur(500px);
+    width: 1000px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 80%;
+    left: 0px;
+    transform: translate(-60%, -50%);
+    z-index: -1;
+  }
+
+  &__container {
+    @include flex-box(center, center, column);
+    @include respond(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    gap: var(--space-1);
+    position: relative;
+  }
+
+  &__img {
+    flex: 1 0 0;
+    display: block;
+
+    @include respond(lg) {
+      img {
+        margin-left: -1.5rem;
+      }
+    }
+
+    width: 100%;
+  }
+  &__info,
+  &__header {
+    @include flex-box(flex-start, flex-start, column);
+    gap: var(--space-1);
+  }
+  &__info {
+    flex: 1 0 0;
+    width: 100%;
+    &-list {
+      width: 100%;
+      @include flex-box(flex-start, flex-start, column);
+      gap: var(--space-1);
+    }
+  }
+  &__item {
+    @include flex-box;
+    width: 100%;
+    gap: var(--space-1);
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background: var(--color-white);
+      box-shadow: 0 2px 8px 0 rgba(40, 41, 61, 0.02),
+        0 16px 24px 0 rgba(96, 97, 112, 0.12);
+    }
+    &-img {
+      border-radius: var(--space-1);
+      background: var(--color-white);
+
+      width: 60px;
+      padding: var(--space-1);
+      aspect-ratio: 1;
+
+      padding: var(--space-1);
+    }
+    &-description {
+      flex: auto;
+      @include flex-box(flex-start, flex-start, column);
+    }
+  }
+}

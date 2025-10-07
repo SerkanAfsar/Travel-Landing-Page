@@ -1,0 +1,142 @@
+@use "../base/mixins" as *;
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+
+  @include respond(md) {
+    height: 100vh;
+    padding-top: 5rem;
+  }
+  background: linear-gradient(
+    180deg,
+    #e2f6fc 14.25%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  &__container {
+    @include flex-box(center, center, column);
+    padding-top: 4rem;
+    gap: var(--space-1-5);
+
+    @include respond(md) {
+      height: 100%;
+      flex-direction: row;
+      padding-top: 0rem;
+    }
+  }
+  &__info {
+    flex: 1 0 0;
+
+    @include flex-box(start, start, column);
+    gap: var(--space-1-5);
+    color: var(--color-text);
+    text-align: left;
+    font-family: var(--font-Poppins);
+    order: 1;
+    @include respond(md) {
+      order: 0;
+    }
+
+    &-btnarea {
+      @include flex-box(center, center, row);
+      width: 100%;
+      @include respond(md) {
+        justify-content: flex-start;
+      }
+      gap: var(--space-1);
+      a {
+        display: block;
+        text-decoration: none;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  &__img {
+    @include flex-box(flex-end, center, row);
+    flex: 1 0 0;
+    position: relative;
+    width: 100%;
+
+    &-bg {
+      background: url("../images/hero/herobg.png") no-repeat center;
+      background-size: cover;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      border-radius: 100%;
+      max-width: 532px;
+
+      img {
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+  &__card1,
+  &__card2,
+  &__orangedot,
+  &__icon1 {
+    aspect-ratio: 1;
+    display: none;
+    position: absolute;
+
+    @include respond(lg) {
+      display: block;
+    }
+  }
+  &__card1 {
+    width: 150px;
+    left: 0px;
+    bottom: 20px;
+    @include respond(xl) {
+      width: 200px;
+      left: 10px;
+      bottom: 10px;
+    }
+    animation: animateUpDown 2s infinite alternate ease-in-out;
+  }
+  &__card2 {
+    width: 140px;
+    animation: animateRightLeft 3s infinite alternate ease-in-out;
+    right: -50px;
+    bottom: 140px;
+  }
+  &__orangedot {
+    width: 27px;
+    right: 11.5%;
+    top: 11.5%;
+  }
+  &__icon1 {
+    width: 77px;
+    height: 77px;
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    @include respond(xl) {
+      top: 20%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes animateUpDown {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes animateRightLeft {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}

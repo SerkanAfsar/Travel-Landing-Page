@@ -1,0 +1,106 @@
+@use "mixins" as *;
+.hero {
+  h1,
+  p {
+    text-align: center;
+    @include respond(md) {
+      text-align: left;
+    }
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    @include respond(md) {
+      line-height: 1.4;
+    }
+    @include respond(xl) {
+      font-size: 3rem;
+    }
+  }
+  p {
+    line-height: 1.5;
+    @include respond(md) {
+      margin-top: -1rem;
+      line-height: 2;
+      padding-right: 2rem;
+    }
+  }
+}
+.destination {
+  &__header {
+    padding: 2rem 0rem;
+    font-family: var(--font-Lato);
+
+    color: var(--color-text);
+    h2,
+    p {
+      text-align: center;
+      @include respond(lg) {
+        text-align: left;
+      }
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      @include respond(lg) {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      margin-top: var(--space-1);
+    }
+  }
+}
+
+.faq {
+  color: var(--color-text);
+  font-family: var(--font-Lato);
+  text-align: center;
+  @include respond(lg) {
+    text-align: left;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 140%; /* 50.4px */
+    letter-spacing: -0.36px;
+    display: inline-block;
+    @include respond(lg) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    font-size: 0.75rem;
+    @include respond(lg) {
+      font-size: 1rem;
+    }
+
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+    letter-spacing: 0.15px;
+    color: #636363;
+    text-align: left;
+  }
+}
+.vacation {
+  color: var(--color-text);
+  font-family: var(--font-Lato);
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 140%; /* 50.4px */
+    letter-spacing: -0.36px;
+  }
+  p {
+    font-size: 1rem;
+
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+    letter-spacing: 0.15px;
+    color: #636363;
+  }
+}

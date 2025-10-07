@@ -1,0 +1,14 @@
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--space-0-5);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-Lato);
+
+  &-primary {
+    color: var(--color-white);
+    background: var(--color-secondary);
+  }
+}
